@@ -10,13 +10,18 @@ package View;
  * @author eduar
  */
 public class MetabolismoBasal_GUI extends javax.swing.JFrame {
-    public static int aparece = 1;
+    public static int aparece1 = 1;
+    public static int aparece2 = 1;
+    
+    
     /**
      * Creates new form MetabolismoBasal_GUI
      */
     public MetabolismoBasal_GUI() {
         initComponents();
-        
+        homemFormula.setVisible(false);
+        mulherFormula.setVisible(false);
+        painelMenuSand.setVisible(false);
     }
 
     /**
@@ -29,16 +34,13 @@ public class MetabolismoBasal_GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        painelMenuSand = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -51,94 +53,144 @@ public class MetabolismoBasal_GUI extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        homemFormula = new javax.swing.JLabel();
+        mulherFormula = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
         jPanel1.setLayout(null);
 
-        jPanel2.setBackground(new java.awt.Color(255, 153, 102));
-        jPanel2.setLayout(null);
+        jToggleButton1.setBackground(new java.awt.Color(250, 133, 34));
+        jToggleButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jToggleButton1.setText("Fórmula");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jToggleButton1);
+        jToggleButton1.setBounds(380, 170, 90, 40);
 
-        jButton1.setText("Menu sand");
-        jPanel2.add(jButton1);
-        jButton1.setBounds(20, 10, 90, 23);
+        painelMenuSand.setBackground(new java.awt.Color(255, 255, 255));
+        painelMenuSand.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(250, 133, 34), 2));
+        painelMenuSand.setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setText("Cálculo de Metabolismo Basal");
-        jPanel2.add(jLabel2);
-        jLabel2.setBounds(150, 10, 190, 14);
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home.png"))); // NOI18N
+        jButton2.setText(" Início");
+        jButton2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        painelMenuSand.add(jButton2);
+        jButton2.setBounds(10, 10, 110, 30);
 
-        jButton2.setText("perfil");
-        jPanel2.add(jButton2);
-        jButton2.setBounds(410, 10, 57, 23);
+        jButton5.setBackground(new java.awt.Color(255, 255, 255));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/maisReceitas.png"))); // NOI18N
+        jButton5.setText(" Receitas");
+        jButton5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        painelMenuSand.add(jButton5);
+        jButton5.setBounds(10, 40, 110, 30);
 
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 0, 500, 40);
+        jButton6.setBackground(new java.awt.Color(255, 255, 255));
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/valorNutri.png"))); // NOI18N
+        jButton6.setText(" Nutrição");
+        jButton6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        painelMenuSand.add(jButton6);
+        jButton6.setBounds(10, 100, 110, 30);
 
-        jLabel1.setText("Metabolismo basal ou Taxa metabólica basal é um método matemático, não exato, de");
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(20, 70, 470, 14);
+        jButton7.setBackground(new java.awt.Color(255, 255, 255));
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/mercado.png"))); // NOI18N
+        jButton7.setText(" Mercado");
+        jButton7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        painelMenuSand.add(jButton7);
+        jButton7.setBounds(10, 70, 110, 30);
 
-        jLabel3.setText("calcular a quantidade calórica que o corpo necessita, em vinte e quatro horas,");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(20, 90, 470, 14);
+        jButton8.setBackground(new java.awt.Color(255, 51, 51));
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/sair.png"))); // NOI18N
+        jButton8.setText("  Sair");
+        jButton8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        painelMenuSand.add(jButton8);
+        jButton8.setBounds(10, 130, 110, 30);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel4.setText("O que é:");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(20, 50, 60, 15);
+        jPanel1.add(painelMenuSand);
+        painelMenuSand.setBounds(0, 60, 130, 170);
 
-        jLabel5.setText("para manter-se nutrido durante o decorrer das atividades diárias, e/ou fazendo um");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(20, 110, 460, 14);
-
-        jLabel6.setText("jejum de pelo menos doze horas em repouso, sem prejudicar o funcionamento dos");
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(20, 130, 460, 14);
-
-        jLabel7.setText("principais órgão e manter a temperatura corporal sobre a normalidade.");
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(20, 150, 450, 14);
-
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cálculo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
         jPanel3.setLayout(null);
 
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel10.setText("Peso (Kg):");
         jPanel3.add(jLabel10);
-        jLabel10.setBounds(20, 30, 70, 14);
+        jLabel10.setBounds(20, 30, 70, 15);
 
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel11.setText("Idade:");
         jPanel3.add(jLabel11);
-        jLabel11.setBounds(20, 90, 50, 14);
+        jLabel11.setBounds(20, 90, 50, 15);
 
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel12.setText("Altura (cm):");
         jPanel3.add(jLabel12);
-        jLabel12.setBounds(20, 60, 70, 14);
+        jLabel12.setBounds(20, 60, 70, 15);
+
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jPanel3.add(jTextField1);
         jTextField1.setBounds(100, 30, 90, 20);
+
+        jTextField2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jPanel3.add(jTextField2);
         jTextField2.setBounds(100, 60, 90, 20);
+
+        jTextField3.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jPanel3.add(jTextField3);
         jTextField3.setBounds(100, 90, 90, 20);
 
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel13.setText("Sexo:");
         jPanel3.add(jLabel13);
-        jLabel13.setBounds(20, 120, 28, 14);
+        jLabel13.setBounds(20, 120, 40, 15);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Masculino", "Feminino" }));
         jPanel3.add(jComboBox1);
         jComboBox1.setBounds(100, 120, 90, 20);
 
+        jButton3.setBackground(new java.awt.Color(250, 133, 34));
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton3.setText("Calcular");
         jPanel3.add(jButton3);
-        jButton3.setBounds(260, 113, 140, 30);
+        jButton3.setBounds(280, 110, 110, 30);
 
-        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel14.setText("Resultado:");
         jPanel3.add(jLabel14);
         jLabel14.setBounds(300, 20, 70, 20);
@@ -152,28 +204,56 @@ public class MetabolismoBasal_GUI extends javax.swing.JFrame {
             }
         });
         jPanel3.add(jTextField4);
-        jTextField4.setBounds(290, 50, 80, 40);
+        jTextField4.setBounds(290, 50, 90, 40);
 
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(20, 230, 450, 160);
+        jPanel3.setBounds(20, 230, 450, 150);
 
-        jToggleButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jToggleButton1.setText("Fórmula");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        homemFormula.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        homemFormula.setText("Homens: 66 + (13,7 x Peso) + (5,0 x Altura) - (6,8 x Idade)");
+        jPanel1.add(homemFormula);
+        homemFormula.setBounds(40, 170, 350, 15);
+
+        mulherFormula.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        mulherFormula.setText("Mulheres: 665 + (9,6 x Peso) + (1,8 x Altura) - (4,7 x Idade)");
+        jPanel1.add(mulherFormula);
+        mulherFormula.setBounds(40, 190, 350, 15);
+
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        jLabel4.setText("O que é:");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(20, 70, 60, 15);
+
+        jButton1.setBackground(new java.awt.Color(250, 133, 34));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/menu.png"))); // NOI18N
+        jButton1.setBorderPainted(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton1);
-        jToggleButton1.setBounds(380, 180, 90, 40);
+        jPanel1.add(jButton1);
+        jButton1.setBounds(10, 10, 50, 50);
 
-        jLabel8.setText("Homens: 66x+ (13,7 x Peso) + (5,0 x Altura) - (6,8 x Idade)");
-        jPanel1.add(jLabel8);
-        jLabel8.setBounds(70, 180, 310, 14);
+        jButton4.setBackground(new java.awt.Color(250, 133, 34));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/iconePerfil (1).png"))); // NOI18N
+        jButton4.setBorderPainted(false);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton4);
+        jButton4.setBounds(430, 10, 50, 50);
 
-        jLabel9.setText("Mulheres: 665 + (9,6 x Peso) + (1,8 x Altura) - (4,7 x Idade)");
-        jPanel1.add(jLabel9);
-        jLabel9.setBounds(70, 200, 310, 14);
+        jLabel15.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel15.setText("<html>Metabolismo basal ou Taxa metabólica basal é um método matemático para calcular a quantidade calórica que o corpo necessita, em vinte e quatro horas, para manter-se nutrido durante o decorrer das atividades diárias sem prejudicar o funcionamento dos principais órgãos\n\n\n\n\n</html>");
+        jPanel1.add(jLabel15);
+        jLabel15.setBounds(20, 80, 450, 80);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background3.png"))); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(0, 0, 500, 400);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -195,8 +275,53 @@ public class MetabolismoBasal_GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        
+        aparece1++;
+        if(aparece1%2 == 0){
+            homemFormula.setVisible(true);
+            mulherFormula.setVisible(true);
+        }else{
+            homemFormula.setVisible(false);
+            mulherFormula.setVisible(false);
+        }
     }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        new Perfil_GUI().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        aparece2++;
+        if(aparece2%2 == 0){
+            painelMenuSand.setVisible(true);
+        }else{
+            painelMenuSand.setVisible(false);      
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        new Home_GUI().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        new Receitas_GUI().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        new Mercado_GUI().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        new ValorNutricional_GUI().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,9 +359,15 @@ public class MetabolismoBasal_GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel homemFormula;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -244,21 +375,16 @@ public class MetabolismoBasal_GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JLabel mulherFormula;
+    private javax.swing.JPanel painelMenuSand;
     // End of variables declaration//GEN-END:variables
 }
