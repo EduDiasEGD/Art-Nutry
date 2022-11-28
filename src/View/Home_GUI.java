@@ -106,7 +106,7 @@ public class Home_GUI extends javax.swing.JFrame {
         jLabel8.setBounds(80, 50, 320, 19);
 
         jButton5.setBackground(new java.awt.Color(246, 188, 133));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/iconePerfil.png"))); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/iconePerfil (1).png"))); // NOI18N
         jButton5.setBorderPainted(false);
         jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton5.setIconTextGap(0);
@@ -116,7 +116,7 @@ public class Home_GUI extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton5);
-        jButton5.setBounds(430, 10, 60, 60);
+        jButton5.setBounds(430, 10, 50, 50);
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/imgInicio.png"))); // NOI18N
         jPanel1.add(jLabel7);

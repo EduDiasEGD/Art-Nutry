@@ -5,6 +5,8 @@
  */
 package View;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author eduar
@@ -13,6 +15,11 @@ public class MetabolismoBasal_GUI extends javax.swing.JFrame {
     public static int aparece1 = 1;
     public static int aparece2 = 1;
     
+    public static Double idadeMB;
+    public static String sexoMB = "";
+    public static Double alturaMB;
+    public static Double pesoMB;
+    public static Double resultadoMB;
     
     /**
      * Creates new form MetabolismoBasal_GUI
@@ -45,14 +52,14 @@ public class MetabolismoBasal_GUI extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        pesoTXTmb = new javax.swing.JTextField();
+        alturaTXTmb = new javax.swing.JTextField();
+        idadeTXTmb = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
-        jButton3 = new javax.swing.JButton();
+        sexoCDCmb = new javax.swing.JComboBox();
+        calcular = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        resultadoTXTmb = new javax.swing.JTextField();
         homemFormula = new javax.swing.JLabel();
         mulherFormula = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -163,48 +170,53 @@ public class MetabolismoBasal_GUI extends javax.swing.JFrame {
         jPanel3.add(jLabel12);
         jLabel12.setBounds(20, 60, 70, 15);
 
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jPanel3.add(jTextField1);
-        jTextField1.setBounds(100, 30, 90, 20);
+        pesoTXTmb.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jPanel3.add(pesoTXTmb);
+        pesoTXTmb.setBounds(100, 30, 90, 20);
 
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jPanel3.add(jTextField2);
-        jTextField2.setBounds(100, 60, 90, 20);
+        alturaTXTmb.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jPanel3.add(alturaTXTmb);
+        alturaTXTmb.setBounds(100, 60, 90, 20);
 
-        jTextField3.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jPanel3.add(jTextField3);
-        jTextField3.setBounds(100, 90, 90, 20);
+        idadeTXTmb.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jPanel3.add(idadeTXTmb);
+        idadeTXTmb.setBounds(100, 90, 90, 20);
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel13.setText("Sexo:");
         jPanel3.add(jLabel13);
         jLabel13.setBounds(20, 120, 40, 15);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Masculino", "Feminino" }));
-        jPanel3.add(jComboBox1);
-        jComboBox1.setBounds(100, 120, 90, 20);
+        sexoCDCmb.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Masculino", "Feminino" }));
+        jPanel3.add(sexoCDCmb);
+        sexoCDCmb.setBounds(100, 120, 90, 20);
 
-        jButton3.setBackground(new java.awt.Color(250, 133, 34));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton3.setText("Calcular");
-        jPanel3.add(jButton3);
-        jButton3.setBounds(280, 110, 110, 30);
+        calcular.setBackground(new java.awt.Color(250, 133, 34));
+        calcular.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        calcular.setText("Calcular");
+        calcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calcularActionPerformed(evt);
+            }
+        });
+        jPanel3.add(calcular);
+        calcular.setBounds(280, 110, 110, 30);
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel14.setText("Resultado:");
         jPanel3.add(jLabel14);
         jLabel14.setBounds(300, 20, 70, 20);
 
-        jTextField4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField4.setText("- - -");
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        resultadoTXTmb.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        resultadoTXTmb.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        resultadoTXTmb.setText("- - -");
+        resultadoTXTmb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                resultadoTXTmbActionPerformed(evt);
             }
         });
-        jPanel3.add(jTextField4);
-        jTextField4.setBounds(290, 50, 90, 40);
+        jPanel3.add(resultadoTXTmb);
+        resultadoTXTmb.setBounds(290, 50, 90, 40);
 
         jPanel1.add(jPanel3);
         jPanel3.setBounds(20, 230, 450, 150);
@@ -270,9 +282,9 @@ public class MetabolismoBasal_GUI extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void resultadoTXTmbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultadoTXTmbActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_resultadoTXTmbActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         aparece1++;
@@ -323,6 +335,24 @@ public class MetabolismoBasal_GUI extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton6ActionPerformed
 
+    private void calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcularActionPerformed
+        idadeMB = Double.parseDouble(idadeTXTmb.getText());
+        sexoMB = (String) sexoCDCmb.getSelectedItem();
+        alturaMB = Double.parseDouble(alturaTXTmb.getText());
+        pesoMB = Double.parseDouble(pesoTXTmb.getText());
+        
+        if(sexoMB.equals("Masculino")){
+            
+            resultadoMB = 66 + (13.7 * pesoMB) + (5.0 * alturaMB) - (6.8 * idadeMB);
+            resultadoTXTmb.setText("");
+            resultadoTXTmb.setText(String.valueOf(resultadoMB));
+        }else{
+            resultadoMB = 665 + (9.6 * pesoMB) + (1.8 * alturaMB) - (4.7 * idadeMB);
+            resultadoTXTmb.setText("");
+            resultadoTXTmb.setText(String.valueOf(resultadoMB));
+        }
+    }//GEN-LAST:event_calcularActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -359,16 +389,17 @@ public class MetabolismoBasal_GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField alturaTXTmb;
+    private javax.swing.JButton calcular;
     private javax.swing.JLabel homemFormula;
+    private javax.swing.JTextField idadeTXTmb;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -379,12 +410,11 @@ public class MetabolismoBasal_GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JLabel mulherFormula;
     private javax.swing.JPanel painelMenuSand;
+    private javax.swing.JTextField pesoTXTmb;
+    private javax.swing.JTextField resultadoTXTmb;
+    private javax.swing.JComboBox sexoCDCmb;
     // End of variables declaration//GEN-END:variables
 }

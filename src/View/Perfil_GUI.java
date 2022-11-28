@@ -5,12 +5,14 @@
  */
 package View;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Alunos
  */
 public class Perfil_GUI extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form Perfil_GUI
      */
@@ -30,16 +32,16 @@ public class Perfil_GUI extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        nomeTXT = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        idadeTXT = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        generoCDC = new javax.swing.JComboBox();
         jLabel12 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        alturaTXT = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        pesoTXT = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
@@ -66,10 +68,15 @@ public class Perfil_GUI extends javax.swing.JFrame {
         jPanel1.add(jLabel4);
         jLabel4.setBounds(200, 80, 60, 16);
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jPanel1.add(jTextField1);
-        jTextField1.setBounds(270, 80, 160, 22);
+        nomeTXT.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        nomeTXT.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        nomeTXT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nomeTXTActionPerformed(evt);
+            }
+        });
+        jPanel1.add(nomeTXT);
+        nomeTXT.setBounds(270, 80, 160, 22);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel9.setText("-----------------------------------------------------------");
@@ -81,48 +88,73 @@ public class Perfil_GUI extends javax.swing.JFrame {
         jPanel1.add(jLabel10);
         jLabel10.setBounds(200, 120, 60, 16);
 
-        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jPanel1.add(jTextField2);
-        jTextField2.setBounds(320, 120, 110, 22);
+        idadeTXT.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        idadeTXT.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        idadeTXT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idadeTXTActionPerformed(evt);
+            }
+        });
+        jPanel1.add(idadeTXT);
+        idadeTXT.setBounds(320, 120, 110, 22);
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel11.setText("Sexo:");
         jPanel1.add(jLabel11);
         jLabel11.setBounds(200, 160, 70, 16);
 
-        jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Masculino", "Feminino" }));
-        jPanel1.add(jComboBox1);
-        jComboBox1.setBounds(340, 160, 90, 22);
+        generoCDC.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        generoCDC.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Masculino", "Feminino" }));
+        generoCDC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                generoCDCActionPerformed(evt);
+            }
+        });
+        jPanel1.add(generoCDC);
+        generoCDC.setBounds(340, 160, 90, 22);
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel12.setText("Altura (cm):");
         jPanel1.add(jLabel12);
         jLabel12.setBounds(200, 230, 90, 16);
 
-        jTextField3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jTextField3.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jPanel1.add(jTextField3);
-        jTextField3.setBounds(320, 230, 110, 22);
+        alturaTXT.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        alturaTXT.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        alturaTXT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                alturaTXTActionPerformed(evt);
+            }
+        });
+        jPanel1.add(alturaTXT);
+        alturaTXT.setBounds(320, 230, 110, 22);
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel14.setText("Peso (kg):");
         jPanel1.add(jLabel14);
         jLabel14.setBounds(200, 270, 70, 16);
 
-        jTextField4.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jTextField4.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jPanel1.add(jTextField4);
-        jTextField4.setBounds(320, 270, 110, 22);
+        pesoTXT.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        pesoTXT.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        pesoTXT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pesoTXTActionPerformed(evt);
+            }
+        });
+        jPanel1.add(pesoTXT);
+        pesoTXT.setBounds(320, 270, 110, 22);
 
         jButton2.setBackground(new java.awt.Color(51, 204, 0));
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jButton2.setText("Salvar");
         jButton2.setBorderPainted(false);
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2);
-        jButton2.setBounds(250, 340, 80, 30);
+        jButton2.setBounds(240, 340, 80, 30);
 
         jButton3.setBackground(new java.awt.Color(255, 139, 30));
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
@@ -209,13 +241,50 @@ public class Perfil_GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        System.exit(0);
+        new TelaLogin_GUI().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         new Home_GUI().setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        /*String nome = nomeTXT.getText();
+        int idade = Integer.parseInt(idadeTXT.getText());
+        String genero = (String) generoCDC.getSelectedItem();
+        int altura = Integer.parseInt(alturaTXT.getText());
+        int peso = Integer.parseInt(pesoTXT.getText());
+        JOptionPane.showMessageDialog(null, "nome: "+nome+"\nidade: "+idade+"\nSexo: "+genero+ "\naltura: "+altura+ "\nPeso: "+peso);
+
+        nomeTXT.setText(nome);
+        idadeTXT.setText(Integer.toString(idade));
+        generoCDC.getEditor().setItem(genero); //setText para o combo box
+        pesoTXT.setText(Integer.toString(peso));
+        alturaTXT.setText(Integer.toString(altura));
+        
+        */
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void nomeTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeTXTActionPerformed
+        
+    }//GEN-LAST:event_nomeTXTActionPerformed
+
+    private void idadeTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idadeTXTActionPerformed
+        
+    }//GEN-LAST:event_idadeTXTActionPerformed
+
+    private void generoCDCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generoCDCActionPerformed
+        
+    }//GEN-LAST:event_generoCDCActionPerformed
+
+    private void alturaTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alturaTXTActionPerformed
+        
+    }//GEN-LAST:event_alturaTXTActionPerformed
+
+    private void pesoTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesoTXTActionPerformed
+        
+    }//GEN-LAST:event_pesoTXTActionPerformed
 
     /**
      * @param args the command line arguments
@@ -253,11 +322,13 @@ public class Perfil_GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JTextField alturaTXT;
+    public static javax.swing.JComboBox generoCDC;
+    public static javax.swing.JTextField idadeTXT;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -271,9 +342,7 @@ public class Perfil_GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    public static javax.swing.JTextField nomeTXT;
+    public static javax.swing.JTextField pesoTXT;
     // End of variables declaration//GEN-END:variables
 }
