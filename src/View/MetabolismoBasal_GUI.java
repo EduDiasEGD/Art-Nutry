@@ -88,7 +88,6 @@ public class MetabolismoBasal_GUI extends javax.swing.JFrame {
         painelMenuSand.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(250, 133, 34), 2));
         painelMenuSand.setLayout(null);
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home.png"))); // NOI18N
         jButton2.setText(" Início");
         jButton2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -100,7 +99,6 @@ public class MetabolismoBasal_GUI extends javax.swing.JFrame {
         painelMenuSand.add(jButton2);
         jButton2.setBounds(10, 10, 110, 30);
 
-        jButton5.setBackground(new java.awt.Color(255, 255, 255));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/maisReceitas.png"))); // NOI18N
         jButton5.setText(" Receitas");
         jButton5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -112,7 +110,6 @@ public class MetabolismoBasal_GUI extends javax.swing.JFrame {
         painelMenuSand.add(jButton5);
         jButton5.setBounds(10, 40, 110, 30);
 
-        jButton6.setBackground(new java.awt.Color(255, 255, 255));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/valorNutri.png"))); // NOI18N
         jButton6.setText(" Nutrição");
         jButton6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -124,7 +121,6 @@ public class MetabolismoBasal_GUI extends javax.swing.JFrame {
         painelMenuSand.add(jButton6);
         jButton6.setBounds(10, 100, 110, 30);
 
-        jButton7.setBackground(new java.awt.Color(255, 255, 255));
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/mercado.png"))); // NOI18N
         jButton7.setText(" Mercado");
         jButton7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -172,15 +168,15 @@ public class MetabolismoBasal_GUI extends javax.swing.JFrame {
 
         pesoTXTmb.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jPanel3.add(pesoTXTmb);
-        pesoTXTmb.setBounds(100, 30, 90, 20);
+        pesoTXTmb.setBounds(100, 30, 90, 23);
 
         alturaTXTmb.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jPanel3.add(alturaTXTmb);
-        alturaTXTmb.setBounds(100, 60, 90, 20);
+        alturaTXTmb.setBounds(100, 60, 90, 23);
 
         idadeTXTmb.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jPanel3.add(idadeTXTmb);
-        idadeTXTmb.setBounds(100, 90, 90, 20);
+        idadeTXTmb.setBounds(100, 90, 90, 23);
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel13.setText("Sexo:");
@@ -189,7 +185,7 @@ public class MetabolismoBasal_GUI extends javax.swing.JFrame {
 
         sexoCDCmb.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Masculino", "Feminino" }));
         jPanel3.add(sexoCDCmb);
-        sexoCDCmb.setBounds(100, 120, 90, 20);
+        sexoCDCmb.setBounds(100, 120, 90, 23);
 
         calcular.setBackground(new java.awt.Color(250, 133, 34));
         calcular.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -234,7 +230,7 @@ public class MetabolismoBasal_GUI extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         jLabel4.setText("O que é:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(20, 70, 60, 15);
+        jLabel4.setBounds(20, 70, 60, 17);
 
         jButton1.setBackground(new java.awt.Color(250, 133, 34));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/menu.png"))); // NOI18N
