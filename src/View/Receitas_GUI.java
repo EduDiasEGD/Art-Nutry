@@ -5,17 +5,30 @@
  */
 package View;
 
+import java.awt.Desktop;
+import java.awt.GraphicsConfiguration;
+import java.net.URI;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Alunos
  */
 public class Receitas_GUI extends javax.swing.JFrame {
+    public static int receitas = 0;
+    public static int aparece2 = 0;
+
+    public Receitas_GUI(GraphicsConfiguration gc) {
+        super(gc);
+    }
 
     /**
      * Creates new form Receitas_GUI
      */
     public Receitas_GUI() {
         initComponents();
+        painelMenuSand.setVisible(false); 
     }
 
     /**
@@ -28,61 +41,225 @@ public class Receitas_GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        botaoSand = new javax.swing.JButton();
+        painelMenuSand = new javax.swing.JPanel();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jTextField2 = new javax.swing.JTextField();
+        jButton12 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
         jPanel1.setLayout(null);
 
-        jButton1.setText("Menu sanduiche");
-        jPanel1.add(jButton1);
-        jButton1.setBounds(10, 20, 100, 23);
-        jPanel1.add(jTextField1);
-        jTextField1.setBounds(130, 20, 180, 20);
+        botaoSand.setBackground(new java.awt.Color(250, 133, 34));
+        botaoSand.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/menu.png"))); // NOI18N
+        botaoSand.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoSandActionPerformed(evt);
+            }
+        });
+        jPanel1.add(botaoSand);
+        botaoSand.setBounds(10, 10, 50, 50);
 
-        jButton2.setText("lupa(pesquisar)");
-        jPanel1.add(jButton2);
-        jButton2.setBounds(310, 20, 110, 23);
+        painelMenuSand.setBackground(new java.awt.Color(255, 255, 255));
+        painelMenuSand.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(250, 133, 34), 2));
+        painelMenuSand.setLayout(null);
 
-        jButton3.setText("Perfil");
-        jPanel1.add(jButton3);
-        jButton3.setBounds(430, 20, 73, 23);
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home.png"))); // NOI18N
+        jButton7.setText(" Início");
+        jButton7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        painelMenuSand.add(jButton7);
+        jButton7.setBounds(10, 10, 110, 30);
+
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/maisReceitas.png"))); // NOI18N
+        jButton8.setText(" Receitas");
+        jButton8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        painelMenuSand.add(jButton8);
+        jButton8.setBounds(10, 40, 110, 30);
+
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/valorNutri.png"))); // NOI18N
+        jButton9.setText(" Nutrição");
+        jButton9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        painelMenuSand.add(jButton9);
+        jButton9.setBounds(10, 100, 110, 30);
+
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/mercado.png"))); // NOI18N
+        jButton10.setText(" Mercado");
+        jButton10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+        painelMenuSand.add(jButton10);
+        jButton10.setBounds(10, 70, 110, 30);
+
+        jButton11.setBackground(new java.awt.Color(255, 51, 51));
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/sair.png"))); // NOI18N
+        jButton11.setText("  Sair");
+        jButton11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+        painelMenuSand.add(jButton11);
+        jButton11.setBounds(10, 130, 110, 30);
+
+        jPanel1.add(painelMenuSand);
+        painelMenuSand.setBounds(10, 60, 130, 170);
+        jPanel1.add(jTextField2);
+        jTextField2.setBounds(60, 10, 320, 40);
+
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/lupa.png"))); // NOI18N
+        jPanel1.add(jButton12);
+        jButton12.setBounds(390, 10, 50, 50);
+
+        jButton13.setBackground(new java.awt.Color(246, 188, 133));
+        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/iconePerfil (1).png"))); // NOI18N
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton13);
+        jButton13.setBounds(450, 10, 50, 50);
+
+        jPanel4.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel4.setLayout(null);
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setText("Smoothie de Morange e Banana");
+        jPanel4.add(jLabel9);
+        jLabel9.setBounds(10, 10, 230, 30);
+
+        jLabel10.setText("Você só precisa das duas frutas, iogurte natural e gelo para fazer");
+        jPanel4.add(jLabel10);
+        jLabel10.setBounds(10, 40, 330, 14);
+
+        jLabel11.setText("Preço estimado: R$ 20");
+        jPanel4.add(jLabel11);
+        jLabel11.setBounds(240, 20, 120, 14);
+
+        jButton6.setText("Fazer");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton6);
+        jButton6.setBounds(380, 10, 59, 60);
+
+        jLabel12.setText("essa bebida nutritiva e saborosa");
+        jPanel4.add(jLabel12);
+        jLabel12.setBounds(10, 60, 300, 14);
+
+        jPanel1.add(jPanel4);
+        jPanel4.setBounds(20, 280, 450, 80);
+
+        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.setLayout(null);
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setText("Pão de Queijo de Frigideira");
+        jPanel3.add(jLabel4);
+        jLabel4.setBounds(10, 10, 220, 30);
+
+        jLabel6.setText("Uma receita simples e cheia de proteínas");
+        jPanel3.add(jLabel6);
+        jLabel6.setBounds(10, 50, 210, 14);
+
+        jLabel7.setText("Preço estimado: R$ 20");
+        jPanel3.add(jLabel7);
+        jLabel7.setBounds(240, 20, 120, 14);
+
+        jButton5.setText("Fazer");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton5);
+        jButton5.setBounds(380, 10, 59, 60);
+
+        jPanel1.add(jPanel3);
+        jPanel3.setBounds(20, 180, 450, 80);
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setLayout(null);
 
-        jLabel1.setText("Titulo receita");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setText("Mingau de Tapioca sem Açúcar");
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(40, 20, 70, 14);
+        jLabel1.setBounds(10, 10, 220, 30);
 
-        jLabel2.setText("Breve descrição");
+        jLabel2.setText("A tapioca é uma ótima receita para quem busca refeições leves,");
+        jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(50, 50, 90, 14);
+        jLabel2.setBounds(10, 40, 330, 20);
 
-        jLabel3.setText("Preço estimado:");
+        jLabel3.setText("Preço estimado: R$ 20");
         jPanel2.add(jLabel3);
-        jLabel3.setBounds(240, 20, 90, 14);
-
-        jLabel4.setText("Valor");
-        jPanel2.add(jLabel4);
-        jLabel4.setBounds(250, 50, 24, 14);
+        jLabel3.setBounds(240, 20, 120, 14);
 
         jButton4.setText("Fazer");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jButton4);
-        jButton4.setBounds(370, 0, 59, 60);
+        jButton4.setBounds(380, 10, 59, 60);
+
+        jLabel8.setText(" essa receita promete adicionar um pouco de sabor a ela");
+        jPanel2.add(jLabel8);
+        jLabel8.setBounds(10, 60, 300, 14);
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(20, 70, 450, 80);
+        jPanel2.setBounds(20, 80, 450, 80);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bg.jpg"))); // NOI18N
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(0, 0, 500, 400);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -98,6 +275,70 @@ public class Receitas_GUI extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(500, 400));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        receitas = 1;
+        try{
+        Model.Receitas_DAO.receitas();
+    }catch(Exception ex){
+            Logger.getLogger(Mercado_GUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        receitas = 2;
+        try{
+        Model.Receitas_DAO.receitas();
+    }catch(Exception ex){
+            Logger.getLogger(Mercado_GUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        receitas = 3;
+        try{
+        Model.Receitas_DAO.receitas();
+    }catch(Exception ex){
+            Logger.getLogger(Mercado_GUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void botaoSandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSandActionPerformed
+        aparece2++;
+        if(aparece2%2 == 0){
+            painelMenuSand.setVisible(true);
+        }else{
+            painelMenuSand.setVisible(false);
+        }
+    }//GEN-LAST:event_botaoSandActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        new Home_GUI().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        new Receitas_GUI().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        new ValorNutricional_GUI().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        new Mercado_GUI().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton13ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -135,16 +376,34 @@ public class Receitas_GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton botaoSand;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JPanel painelMenuSand;
     // End of variables declaration//GEN-END:variables
 }

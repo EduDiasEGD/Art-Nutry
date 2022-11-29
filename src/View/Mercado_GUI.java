@@ -5,6 +5,7 @@
  */
 package View;
 
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -15,8 +16,10 @@ import java.util.logging.Logger;
 public class Mercado_GUI extends javax.swing.JFrame {
 public static int contBook = 0;
 public static int contCourses = 0;
+public static int aparece2 = 1;
     public Mercado_GUI() {
         initComponents();
+        painelMenuSand.setVisible(false); 
     }
 
     /**
@@ -29,20 +32,28 @@ public static int contCourses = 0;
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        painelMenuSand = new javax.swing.JPanel();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         book1 = new javax.swing.JButton();
         book2 = new javax.swing.JButton();
         book3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jTextField1 = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        botaoSand = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
@@ -50,59 +61,106 @@ public static int contCourses = 0;
         curso1 = new javax.swing.JButton();
         curso2 = new javax.swing.JButton();
         curso3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
+        jPanel1.setBackground(new java.awt.Color(255, 146, 87));
         jPanel1.setLayout(null);
 
-        jButton1.setText("menu sand");
-        jPanel1.add(jButton1);
-        jButton1.setBounds(20, 10, 90, 23);
+        painelMenuSand.setBackground(new java.awt.Color(255, 255, 255));
+        painelMenuSand.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(250, 133, 34), 2));
+        painelMenuSand.setLayout(null);
 
-        jButton2.setText("lupa(pesquisar)");
-        jPanel1.add(jButton2);
-        jButton2.setBounds(296, 11, 110, 23);
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home.png"))); // NOI18N
+        jButton5.setText(" Início");
+        jButton5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        painelMenuSand.add(jButton5);
+        jButton5.setBounds(10, 10, 110, 30);
 
-        jButton3.setText("perfil");
-        jPanel1.add(jButton3);
-        jButton3.setBounds(408, 11, 70, 23);
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/maisReceitas.png"))); // NOI18N
+        jButton6.setText(" Receitas");
+        jButton6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        painelMenuSand.add(jButton6);
+        jButton6.setBounds(10, 40, 110, 30);
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "E-Books", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/valorNutri.png"))); // NOI18N
+        jButton7.setText(" Nutrição");
+        jButton7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        painelMenuSand.add(jButton7);
+        jButton7.setBounds(10, 100, 110, 30);
+
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/mercado.png"))); // NOI18N
+        jButton8.setText(" Mercado");
+        jButton8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        painelMenuSand.add(jButton8);
+        jButton8.setBounds(10, 70, 110, 30);
+
+        jButton9.setBackground(new java.awt.Color(255, 51, 51));
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/sair.png"))); // NOI18N
+        jButton9.setText("  Sair");
+        jButton9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        painelMenuSand.add(jButton9);
+        jButton9.setBounds(10, 130, 110, 30);
+
+        jPanel1.add(painelMenuSand);
+        painelMenuSand.setBounds(10, 40, 130, 170);
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "E-Books", 0, 0, new java.awt.Font("Arial", 1, 12))); // NOI18N
         jPanel2.setLayout(null);
 
         jPanel5.setBackground(new java.awt.Color(255, 102, 102));
         jPanel5.setLayout(null);
 
-        jLabel1.setText("Como ter");
-        jPanel5.add(jLabel1);
-        jLabel1.setBounds(20, 10, 70, 17);
-
-        jLabel2.setText("<html>TANQU<br>INHO </html>");
-        jPanel5.add(jLabel2);
-        jLabel2.setBounds(10, 30, 70, 30);
-
-        jLabel3.setText("em");
-        jPanel5.add(jLabel3);
-        jLabel3.setBounds(30, 50, 18, 17);
-
-        jLabel4.setText("1 SEMANA");
-        jPanel5.add(jLabel4);
-        jLabel4.setBounds(10, 70, 60, 17);
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ebook1_1.png"))); // NOI18N
+        jPanel5.add(jLabel5);
+        jLabel5.setBounds(10, 0, 60, 90);
 
         jPanel2.add(jPanel5);
         jPanel5.setBounds(60, 20, 80, 90);
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 102));
         jPanel6.setLayout(null);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ebook2.png"))); // NOI18N
+        jPanel6.add(jLabel1);
+        jLabel1.setBounds(10, 0, 63, 90);
+
         jPanel2.add(jPanel6);
         jPanel6.setBounds(150, 20, 80, 90);
 
         jPanel7.setBackground(new java.awt.Color(102, 153, 255));
         jPanel7.setLayout(null);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ebook3.png"))); // NOI18N
+        jPanel7.add(jLabel2);
+        jLabel2.setBounds(10, 0, 61, 90);
+
         jPanel2.add(jPanel7);
         jPanel7.setBounds(240, 20, 80, 90);
 
@@ -113,7 +171,7 @@ public static int contCourses = 0;
             }
         });
         jPanel2.add(book1);
-        book1.setBounds(60, 120, 79, 23);
+        book1.setBounds(53, 120, 80, 23);
 
         book2.setText("Comprar");
         book2.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +180,7 @@ public static int contCourses = 0;
             }
         });
         jPanel2.add(book2);
-        book2.setBounds(160, 120, 79, 23);
+        book2.setBounds(153, 120, 80, 23);
 
         book3.setText("Comprar");
         book3.addActionListener(new java.awt.event.ActionListener() {
@@ -131,12 +189,48 @@ public static int contCourses = 0;
             }
         });
         jPanel2.add(book3);
-        book3.setBounds(250, 120, 79, 23);
+        book3.setBounds(243, 120, 80, 23);
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(0, 50, 500, 150);
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cursos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
+        jButton4.setText("Voltar");
+        jPanel1.add(jButton4);
+        jButton4.setBounds(220, 370, 61, 23);
+
+        jPanel4.setBackground(new java.awt.Color(255, 153, 102));
+        jPanel4.setLayout(null);
+        jPanel4.add(jTextField1);
+        jTextField1.setBounds(80, 10, 320, 30);
+
+        jButton3.setBackground(new java.awt.Color(246, 188, 133));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/iconePerfil (1).png"))); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton3);
+        jButton3.setBounds(450, 0, 50, 50);
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/lupa.png"))); // NOI18N
+        jPanel4.add(jButton2);
+        jButton2.setBounds(400, 10, 40, 40);
+
+        botaoSand.setBackground(new java.awt.Color(250, 133, 34));
+        botaoSand.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/menu.png"))); // NOI18N
+        botaoSand.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoSandActionPerformed(evt);
+            }
+        });
+        jPanel4.add(botaoSand);
+        botaoSand.setBounds(10, 0, 50, 50);
+
+        jPanel1.add(jPanel4);
+        jPanel4.setBounds(0, 0, 500, 50);
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cursos", 0, 0, new java.awt.Font("Arial", 1, 12))); // NOI18N
         jPanel3.setLayout(null);
 
         jPanel8.setBackground(new java.awt.Color(153, 255, 153));
@@ -154,14 +248,14 @@ public static int contCourses = 0;
         jPanel3.add(jPanel10);
         jPanel10.setBounds(260, 20, 80, 100);
 
-        curso1.setText("jButton8");
+        curso1.setText("Comprar");
         curso1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 curso1ActionPerformed(evt);
             }
         });
         jPanel3.add(curso1);
-        curso1.setBounds(60, 130, 78, 23);
+        curso1.setBounds(60, 130, 80, 23);
 
         curso2.setText("Comprar");
         curso2.addActionListener(new java.awt.event.ActionListener() {
@@ -170,7 +264,7 @@ public static int contCourses = 0;
             }
         });
         jPanel3.add(curso2);
-        curso2.setBounds(160, 130, 79, 23);
+        curso2.setBounds(160, 130, 80, 23);
 
         curso3.setText("Comprar");
         curso3.addActionListener(new java.awt.event.ActionListener() {
@@ -179,22 +273,10 @@ public static int contCourses = 0;
             }
         });
         jPanel3.add(curso3);
-        curso3.setBounds(260, 130, 79, 23);
+        curso3.setBounds(260, 130, 80, 23);
 
         jPanel1.add(jPanel3);
         jPanel3.setBounds(0, 200, 500, 160);
-
-        jButton4.setText("Voltar");
-        jPanel1.add(jButton4);
-        jButton4.setBounds(220, 370, 72, 23);
-
-        jPanel4.setBackground(new java.awt.Color(255, 153, 102));
-        jPanel4.setLayout(null);
-        jPanel4.add(jTextField1);
-        jTextField1.setBounds(130, 10, 166, 20);
-
-        jPanel1.add(jPanel4);
-        jPanel4.setBounds(0, 0, 500, 50);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -265,6 +347,43 @@ public static int contCourses = 0;
             }
     }//GEN-LAST:event_curso2ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void botaoSandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSandActionPerformed
+        aparece2++;
+        if(aparece2%2 == 0){
+            painelMenuSand.setVisible(true);
+        }else{
+            painelMenuSand.setVisible(false);      
+        }
+    }//GEN-LAST:event_botaoSandActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        new Home_GUI().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        new Receitas_GUI().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        new ValorNutricional_GUI().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        new Mercado_GUI().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jButton9ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -304,17 +423,21 @@ public static int contCourses = 0;
     private javax.swing.JButton book1;
     private javax.swing.JButton book2;
     private javax.swing.JButton book3;
+    private javax.swing.JButton botaoSand;
     private javax.swing.JButton curso1;
     private javax.swing.JButton curso2;
     private javax.swing.JButton curso3;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
@@ -326,5 +449,6 @@ public static int contCourses = 0;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JPanel painelMenuSand;
     // End of variables declaration//GEN-END:variables
 }

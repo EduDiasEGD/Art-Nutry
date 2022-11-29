@@ -173,9 +173,9 @@ public class Perfil_GUI extends javax.swing.JFrame {
         jPanel3.setLayout(null);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel5.setText("img aqui");
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/iconePerfilG.png"))); // NOI18N
         jPanel3.add(jLabel5);
-        jLabel5.setBounds(40, 60, 50, 16);
+        jLabel5.setBounds(10, 20, 110, 120);
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
