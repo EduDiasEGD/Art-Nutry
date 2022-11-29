@@ -31,12 +31,12 @@ public class ValorNutricional_GUI extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        PesquisarAlimento = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        gramatura = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
@@ -51,6 +51,7 @@ public class ValorNutricional_GUI extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        carbo = new javax.swing.JLabel();
 
         jLabel8.setText("jLabel8");
 
@@ -61,15 +62,20 @@ public class ValorNutricional_GUI extends javax.swing.JFrame {
 
         jLabel1.setText("Pesquisa de Alimentos");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(180, 10, 130, 14);
+        jLabel1.setBounds(180, 10, 130, 17);
 
         jButton1.setText("Menu sand");
         jPanel1.add(jButton1);
         jButton1.setBounds(10, 50, 120, 23);
-        jPanel1.add(jTextField1);
-        jTextField1.setBounds(150, 50, 180, 20);
+        jPanel1.add(PesquisarAlimento);
+        PesquisarAlimento.setBounds(150, 50, 180, 23);
 
         jButton2.setText("lupa");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2);
         jButton2.setBounds(330, 50, 60, 23);
 
@@ -83,17 +89,17 @@ public class ValorNutricional_GUI extends javax.swing.JFrame {
 
         jLabel2.setText("gramas");
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(70, 20, 35, 14);
-        jPanel2.add(jTextField2);
-        jTextField2.setBounds(10, 20, 50, 20);
+        jLabel2.setBounds(70, 20, 43, 17);
+        jPanel2.add(gramatura);
+        gramatura.setBounds(10, 20, 50, 23);
 
         jLabel3.setText("=");
         jPanel2.add(jLabel3);
-        jLabel3.setBounds(140, 20, 34, 14);
+        jLabel3.setBounds(140, 20, 34, 17);
 
         jLabel4.setText("Kcal");
         jPanel2.add(jLabel4);
-        jLabel4.setBounds(240, 20, 34, 14);
+        jLabel4.setBounds(240, 20, 34, 17);
 
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,7 +107,7 @@ public class ValorNutricional_GUI extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jTextField3);
-        jTextField3.setBounds(180, 20, 50, 20);
+        jTextField3.setBounds(180, 20, 50, 23);
 
         jButton4.setText("Calcular");
         jPanel2.add(jButton4);
@@ -115,39 +121,41 @@ public class ValorNutricional_GUI extends javax.swing.JFrame {
 
         jLabel5.setText("Tabela Nutricional");
         jPanel4.add(jLabel5);
-        jLabel5.setBounds(10, 10, 110, 14);
+        jLabel5.setBounds(10, 10, 110, 17);
 
         jLabel6.setText("Quantidade");
         jPanel4.add(jLabel6);
-        jLabel6.setBounds(164, 10, 60, 14);
+        jLabel6.setBounds(164, 10, 60, 17);
 
         jLabel7.setText("%");
         jPanel4.add(jLabel7);
-        jLabel7.setBounds(250, 10, 11, 14);
+        jLabel7.setBounds(250, 10, 12, 17);
 
         jLabel9.setText("---------------------------------------------------------------------");
         jPanel4.add(jLabel9);
-        jLabel9.setBounds(10, 30, 276, 14);
+        jLabel9.setBounds(10, 30, 276, 17);
 
         jLabel10.setText("Carboidratos");
         jPanel4.add(jLabel10);
-        jLabel10.setBounds(10, 50, 80, 14);
+        jLabel10.setBounds(10, 50, 80, 17);
 
         jLabel11.setText("Proteínas");
         jPanel4.add(jLabel11);
-        jLabel11.setBounds(10, 80, 80, 14);
+        jLabel11.setBounds(10, 80, 80, 17);
 
         jLabel12.setText("Gorduras Totais");
         jPanel4.add(jLabel12);
-        jLabel12.setBounds(10, 110, 100, 14);
+        jLabel12.setBounds(10, 110, 100, 17);
 
         jLabel13.setText("Açúcares");
         jPanel4.add(jLabel13);
-        jLabel13.setBounds(10, 140, 80, 14);
+        jLabel13.setBounds(10, 140, 80, 17);
 
         jLabel14.setText("Sódio");
         jPanel4.add(jLabel14);
-        jLabel14.setBounds(10, 170, 60, 14);
+        jLabel14.setBounds(10, 170, 60, 17);
+        jPanel4.add(carbo);
+        carbo.setBounds(160, 50, 0, 0);
 
         jPanel1.add(jPanel4);
         jPanel4.setBounds(110, 190, 290, 200);
@@ -170,6 +178,10 @@ public class ValorNutricional_GUI extends javax.swing.JFrame {
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Model.PesquisaAlimentar_DAO.Comidas();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,6 +219,9 @@ public class ValorNutricional_GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JTextField PesquisarAlimento;
+    public static javax.swing.JLabel carbo;
+    public static javax.swing.JTextField gramatura;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -228,8 +243,6 @@ public class ValorNutricional_GUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }

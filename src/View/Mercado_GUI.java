@@ -5,15 +5,16 @@
  */
 package View;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author eduar
  */
 public class Mercado_GUI extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Mercado_GUI
-     */
+public static int contBook = 0;
+public static int contCourses = 0;
     public Mercado_GUI() {
         initComponents();
     }
@@ -39,16 +40,16 @@ public class Mercado_GUI extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        book1 = new javax.swing.JButton();
+        book2 = new javax.swing.JButton();
+        book3 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        curso1 = new javax.swing.JButton();
+        curso2 = new javax.swing.JButton();
+        curso3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
@@ -78,7 +79,7 @@ public class Mercado_GUI extends javax.swing.JFrame {
 
         jLabel1.setText("Como ter");
         jPanel5.add(jLabel1);
-        jLabel1.setBounds(20, 10, 70, 14);
+        jLabel1.setBounds(20, 10, 70, 17);
 
         jLabel2.setText("<html>TANQU<br>INHO </html>");
         jPanel5.add(jLabel2);
@@ -86,11 +87,11 @@ public class Mercado_GUI extends javax.swing.JFrame {
 
         jLabel3.setText("em");
         jPanel5.add(jLabel3);
-        jLabel3.setBounds(30, 50, 14, 14);
+        jLabel3.setBounds(30, 50, 18, 17);
 
         jLabel4.setText("1 SEMANA");
         jPanel5.add(jLabel4);
-        jLabel4.setBounds(10, 70, 60, 14);
+        jLabel4.setBounds(10, 70, 60, 17);
 
         jPanel2.add(jPanel5);
         jPanel5.setBounds(60, 20, 80, 90);
@@ -105,17 +106,32 @@ public class Mercado_GUI extends javax.swing.JFrame {
         jPanel2.add(jPanel7);
         jPanel7.setBounds(240, 20, 80, 90);
 
-        jButton5.setText("Comprar");
-        jPanel2.add(jButton5);
-        jButton5.setBounds(60, 120, 73, 23);
+        book1.setText("Comprar");
+        book1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(book1);
+        book1.setBounds(60, 120, 79, 23);
 
-        jButton6.setText("Comprar");
-        jPanel2.add(jButton6);
-        jButton6.setBounds(160, 120, 73, 23);
+        book2.setText("Comprar");
+        book2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(book2);
+        book2.setBounds(160, 120, 79, 23);
 
-        jButton7.setText("Comprar");
-        jPanel2.add(jButton7);
-        jButton7.setBounds(250, 120, 73, 23);
+        book3.setText("Comprar");
+        book3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book3ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(book3);
+        book3.setBounds(250, 120, 79, 23);
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(0, 50, 500, 150);
@@ -138,34 +154,39 @@ public class Mercado_GUI extends javax.swing.JFrame {
         jPanel3.add(jPanel10);
         jPanel10.setBounds(260, 20, 80, 100);
 
-        jButton8.setText("jButton8");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        curso1.setText("jButton8");
+        curso1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                curso1ActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton8);
-        jButton8.setBounds(60, 130, 73, 23);
+        jPanel3.add(curso1);
+        curso1.setBounds(60, 130, 78, 23);
 
-        jButton9.setText("Comprar");
-        jPanel3.add(jButton9);
-        jButton9.setBounds(160, 130, 73, 23);
-
-        jButton10.setText("Comprar");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        curso2.setText("Comprar");
+        curso2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                curso2ActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton10);
-        jButton10.setBounds(260, 130, 73, 23);
+        jPanel3.add(curso2);
+        curso2.setBounds(160, 130, 79, 23);
+
+        curso3.setText("Comprar");
+        curso3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                curso3ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(curso3);
+        curso3.setBounds(260, 130, 79, 23);
 
         jPanel1.add(jPanel3);
         jPanel3.setBounds(0, 200, 500, 160);
 
         jButton4.setText("Voltar");
         jPanel1.add(jButton4);
-        jButton4.setBounds(220, 370, 61, 23);
+        jButton4.setBounds(220, 370, 72, 23);
 
         jPanel4.setBackground(new java.awt.Color(255, 153, 102));
         jPanel4.setLayout(null);
@@ -190,13 +211,59 @@ public class Mercado_GUI extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+    private void curso1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_curso1ActionPerformed
+        contCourses = 1;
+       try{
+        Model.Mercado_DAO.ebooks();
+    }catch(Exception ex){
+            Logger.getLogger(Mercado_GUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }//GEN-LAST:event_curso1ActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
+    private void curso3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_curso3ActionPerformed
+        contCourses = 3;
+       try{
+        Model.Mercado_DAO.ebooks();
+    }catch(Exception ex){
+            Logger.getLogger(Mercado_GUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }//GEN-LAST:event_curso3ActionPerformed
+
+    private void book1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book1ActionPerformed
+       contBook = 1;
+       try{
+        Model.Mercado_DAO.ebooks();
+    }catch(Exception ex){
+            Logger.getLogger(Mercado_GUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }//GEN-LAST:event_book1ActionPerformed
+
+    private void book2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book2ActionPerformed
+        contBook = 2;
+       try{
+        Model.Mercado_DAO.ebooks();
+    }catch(Exception ex){
+            Logger.getLogger(Mercado_GUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }//GEN-LAST:event_book2ActionPerformed
+
+    private void book3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book3ActionPerformed
+       contBook = 3;
+       try{
+        Model.Mercado_DAO.ebooks();
+    }catch(Exception ex){
+            Logger.getLogger(Mercado_GUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }//GEN-LAST:event_book3ActionPerformed
+
+    private void curso2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_curso2ActionPerformed
+       contCourses = 2;
+       try{
+        Model.Mercado_DAO.ebooks();
+    }catch(Exception ex){
+            Logger.getLogger(Mercado_GUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }//GEN-LAST:event_curso2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,16 +301,16 @@ public class Mercado_GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton book1;
+    private javax.swing.JButton book2;
+    private javax.swing.JButton book3;
+    private javax.swing.JButton curso1;
+    private javax.swing.JButton curso2;
+    private javax.swing.JButton curso3;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
