@@ -10,6 +10,7 @@ import java.awt.GraphicsConfiguration;
 import java.net.URI;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,8 +18,8 @@ import java.util.logging.Logger;
  */
 public class Receitas_GUI extends javax.swing.JFrame {
     public static int receitas = 0;
-    public static int aparece2 = 0;
-
+    public static int aparece2 = 1;
+    
     public Receitas_GUI(GraphicsConfiguration gc) {
         super(gc);
     }
@@ -28,7 +29,11 @@ public class Receitas_GUI extends javax.swing.JFrame {
      */
     public Receitas_GUI() {
         initComponents();
-        painelMenuSand.setVisible(false); 
+        painelMenuSand.setVisible(false);
+        painel1.setVisible(true);
+        painel2.setVisible(true);
+        painel3.setVisible(true);
+        painel4.setVisible(false);
     }
 
     /**
@@ -40,6 +45,12 @@ public class Receitas_GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
+        painel4 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         botaoSand = new javax.swing.JButton();
         painelMenuSand = new javax.swing.JPanel();
@@ -48,35 +59,68 @@ public class Receitas_GUI extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
-        jButton12 = new javax.swing.JButton();
+        pesquisa = new javax.swing.JTextField();
+        pesquisar = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
+        painel3 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        painel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        painel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        painel4.setBackground(new java.awt.Color(255, 255, 255));
+        painel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 139, 30)));
+        painel4.setLayout(null);
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel13.setText("Frango frito");
+        painel4.add(jLabel13);
+        jLabel13.setBounds(10, 11, 110, 20);
+
+        jLabel14.setText("Uma receita ideal para quem tem pouco tempo");
+        painel4.add(jLabel14);
+        jLabel14.setBounds(10, 50, 240, 14);
+
+        jButton1.setText("Fazer");
+        painel4.add(jButton1);
+        jButton1.setBounds(380, 10, 60, 60);
+
+        jLabel15.setText("Preço estimado: R$ 30");
+        painel4.add(jLabel15);
+        jLabel15.setBounds(250, 10, 120, 20);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
         jPanel1.setLayout(null);
 
-        botaoSand.setBackground(new java.awt.Color(250, 133, 34));
+        botaoSand.setBackground(new java.awt.Color(255, 139, 30));
         botaoSand.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/menu.png"))); // NOI18N
+        botaoSand.setBorderPainted(false);
         botaoSand.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoSandActionPerformed(evt);
@@ -100,8 +144,8 @@ public class Receitas_GUI extends javax.swing.JFrame {
         painelMenuSand.add(jButton7);
         jButton7.setBounds(10, 10, 110, 30);
 
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/maisReceitas.png"))); // NOI18N
-        jButton8.setText(" Receitas");
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/calculadora.png"))); // NOI18N
+        jButton8.setText("Met. Basal");
         jButton8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,116 +191,136 @@ public class Receitas_GUI extends javax.swing.JFrame {
 
         jPanel1.add(painelMenuSand);
         painelMenuSand.setBounds(10, 60, 130, 170);
-        jPanel1.add(jTextField2);
-        jTextField2.setBounds(60, 10, 320, 40);
+        jPanel1.add(pesquisa);
+        pesquisa.setBounds(80, 20, 320, 30);
 
-        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/lupa.png"))); // NOI18N
-        jPanel1.add(jButton12);
-        jButton12.setBounds(390, 10, 50, 50);
+        pesquisar.setBackground(new java.awt.Color(255, 255, 255));
+        pesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/lupa.png"))); // NOI18N
+        pesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pesquisarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(pesquisar);
+        pesquisar.setBounds(390, 20, 40, 30);
 
-        jButton13.setBackground(new java.awt.Color(246, 188, 133));
+        jButton13.setBackground(new java.awt.Color(255, 139, 30));
         jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/iconePerfil (1).png"))); // NOI18N
+        jButton13.setBorderPainted(false);
         jButton13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton13ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton13);
-        jButton13.setBounds(450, 10, 50, 50);
+        jButton13.setBounds(440, 10, 50, 50);
 
-        jPanel4.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel4.setLayout(null);
+        painel3.setBackground(new java.awt.Color(255, 255, 255));
+        painel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 139, 30)));
+        painel3.setLayout(null);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setText("Smoothie de Morange e Banana");
-        jPanel4.add(jLabel9);
-        jLabel9.setBounds(10, 10, 230, 30);
+        painel3.add(jLabel9);
+        jLabel9.setBounds(10, 0, 230, 30);
 
-        jLabel10.setText("Você só precisa das duas frutas, iogurte natural e gelo para fazer");
-        jPanel4.add(jLabel10);
-        jLabel10.setBounds(10, 40, 330, 14);
+        jLabel10.setText("Você só precisa de duas frutas, iogurte e gelo para fazer");
+        painel3.add(jLabel10);
+        jLabel10.setBounds(10, 40, 350, 14);
 
-        jLabel11.setText("Preço estimado: R$ 20");
-        jPanel4.add(jLabel11);
-        jLabel11.setBounds(240, 20, 120, 14);
-
+        jButton6.setBackground(new java.awt.Color(255, 139, 30));
+        jButton6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton6.setText("Fazer");
+        jButton6.setBorderPainted(false);
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton6);
-        jButton6.setBounds(380, 10, 59, 60);
+        painel3.add(jButton6);
+        jButton6.setBounds(369, 20, 70, 40);
 
         jLabel12.setText("essa bebida nutritiva e saborosa");
-        jPanel4.add(jLabel12);
+        painel3.add(jLabel12);
         jLabel12.setBounds(10, 60, 300, 14);
 
-        jPanel1.add(jPanel4);
-        jPanel4.setBounds(20, 280, 450, 80);
+        jLabel16.setText("Preço: R$20");
+        painel3.add(jLabel16);
+        jLabel16.setBounds(260, 10, 120, 14);
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel3.setLayout(null);
+        jPanel1.add(painel3);
+        painel3.setBounds(20, 290, 450, 90);
+
+        painel2.setBackground(new java.awt.Color(255, 255, 255));
+        painel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 139, 30)));
+        painel2.setLayout(null);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Pão de Queijo de Frigideira");
-        jPanel3.add(jLabel4);
-        jLabel4.setBounds(10, 10, 220, 30);
+        painel2.add(jLabel4);
+        jLabel4.setBounds(10, 0, 220, 30);
 
         jLabel6.setText("Uma receita simples e cheia de proteínas");
-        jPanel3.add(jLabel6);
-        jLabel6.setBounds(10, 50, 210, 14);
+        painel2.add(jLabel6);
+        jLabel6.setBounds(10, 50, 250, 14);
 
-        jLabel7.setText("Preço estimado: R$ 20");
-        jPanel3.add(jLabel7);
-        jLabel7.setBounds(240, 20, 120, 14);
-
+        jButton5.setBackground(new java.awt.Color(255, 139, 30));
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton5.setText("Fazer");
+        jButton5.setBorderPainted(false);
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton5);
-        jButton5.setBounds(380, 10, 59, 60);
+        painel2.add(jButton5);
+        jButton5.setBounds(370, 20, 70, 40);
 
-        jPanel1.add(jPanel3);
-        jPanel3.setBounds(20, 180, 450, 80);
+        jLabel17.setText("Preço: R$30");
+        painel2.add(jLabel17);
+        jLabel17.setBounds(260, 10, 120, 14);
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel2.setLayout(null);
+        jPanel1.add(painel2);
+        painel2.setBounds(20, 190, 450, 90);
+
+        painel1.setBackground(new java.awt.Color(255, 255, 255));
+        painel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 139, 30)));
+        painel1.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Mingau de Tapioca sem Açúcar");
-        jPanel2.add(jLabel1);
-        jLabel1.setBounds(10, 10, 220, 30);
+        painel1.add(jLabel1);
+        jLabel1.setBounds(10, 0, 220, 30);
 
-        jLabel2.setText("A tapioca é uma ótima receita para quem busca refeições leves,");
+        jLabel2.setText("A tapioca é uma receita leve, e ao mesmo tempo saborosa");
         jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel2.add(jLabel2);
-        jLabel2.setBounds(10, 40, 330, 20);
+        painel1.add(jLabel2);
+        jLabel2.setBounds(10, 40, 350, 20);
 
-        jLabel3.setText("Preço estimado: R$ 20");
-        jPanel2.add(jLabel3);
-        jLabel3.setBounds(240, 20, 120, 14);
-
+        jButton4.setBackground(new java.awt.Color(255, 139, 30));
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton4.setText("Fazer");
+        jButton4.setBorderPainted(false);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton4);
-        jButton4.setBounds(380, 10, 59, 60);
+        painel1.add(jButton4);
+        jButton4.setBounds(370, 20, 70, 40);
 
         jLabel8.setText(" essa receita promete adicionar um pouco de sabor a ela");
-        jPanel2.add(jLabel8);
-        jLabel8.setBounds(10, 60, 300, 14);
+        painel1.add(jLabel8);
+        jLabel8.setBounds(10, 60, 340, 14);
 
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(20, 80, 450, 80);
+        jLabel11.setText("Preço: R$15");
+        painel1.add(jLabel11);
+        jLabel11.setBounds(260, 10, 120, 14);
 
+        jPanel1.add(painel1);
+        painel1.setBounds(20, 80, 450, 100);
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bg.jpg"))); // NOI18N
         jPanel1.add(jLabel5);
         jLabel5.setBounds(0, 0, 500, 400);
@@ -318,7 +382,7 @@ public class Receitas_GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        new Receitas_GUI().setVisible(true);
+        new MetabolismoBasal_GUI().setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton8ActionPerformed
 
@@ -337,8 +401,21 @@ public class Receitas_GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        // TODO add your handling code here:
+        new Perfil_GUI().setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void pesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarActionPerformed
+        /*String pes = pesquisa.getText(); 
+        if(pes.equals("Frago")){
+            JOptionPane.showMessageDialog(null, "Frango");
+            painel1.setVisible(false);
+            painel2.setVisible(false);
+            painel3.setVisible(false);
+            painel4.setVisible(true);
+        }*/
+        
+    }//GEN-LAST:event_pesquisarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -377,9 +454,9 @@ public class Receitas_GUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoSand;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -391,19 +468,25 @@ public class Receitas_GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JPanel painel1;
+    private javax.swing.JPanel painel2;
+    private javax.swing.JPanel painel3;
+    private javax.swing.JPanel painel4;
     private javax.swing.JPanel painelMenuSand;
+    private javax.swing.JTextField pesquisa;
+    private javax.swing.JButton pesquisar;
     // End of variables declaration//GEN-END:variables
 }

@@ -10,7 +10,7 @@ package View;
  * @author Alunos
  */
 public class ValorNutricional_GUI extends javax.swing.JFrame {
-
+    public static int aparece2 = 1;
     /**
      * Creates new form ValorNutricional_GUI
      */
@@ -29,29 +29,37 @@ public class ValorNutricional_GUI extends javax.swing.JFrame {
 
         jLabel8 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         PesquisarAlimento = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        painelMenuSand = new javax.swing.JPanel();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         gramatura = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        caloria = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         carbo = new javax.swing.JLabel();
+        carboidrato = new javax.swing.JLabel();
+        proteina = new javax.swing.JLabel();
+        gordura = new javax.swing.JLabel();
+        sodio = new javax.swing.JLabel();
+        botaoSand = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         jLabel8.setText("jLabel8");
 
@@ -59,106 +67,193 @@ public class ValorNutricional_GUI extends javax.swing.JFrame {
         setUndecorated(true);
 
         jPanel1.setLayout(null);
-
-        jLabel1.setText("Pesquisa de Alimentos");
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(180, 10, 130, 17);
-
-        jButton1.setText("Menu sand");
-        jPanel1.add(jButton1);
-        jButton1.setBounds(10, 50, 120, 23);
         jPanel1.add(PesquisarAlimento);
-        PesquisarAlimento.setBounds(150, 50, 180, 23);
+        PesquisarAlimento.setBounds(130, 20, 180, 30);
 
-        jButton2.setText("lupa");
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/lupa.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton2);
-        jButton2.setBounds(330, 50, 60, 23);
+        jButton2.setBounds(310, 20, 40, 30);
 
-        jButton3.setText("Perfil");
+        jButton3.setBackground(new java.awt.Color(255, 139, 30));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/iconePerfil (1).png"))); // NOI18N
+        jButton3.setBorderPainted(false);
         jPanel1.add(jButton3);
-        jButton3.setBounds(420, 50, 70, 23);
+        jButton3.setBounds(420, 9, 60, 50);
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        painelMenuSand.setBackground(new java.awt.Color(255, 255, 255));
+        painelMenuSand.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(250, 133, 34), 2));
+        painelMenuSand.setLayout(null);
+
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home.png"))); // NOI18N
+        jButton7.setText(" Início");
+        jButton7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        painelMenuSand.add(jButton7);
+        jButton7.setBounds(10, 10, 110, 30);
+
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/maisReceitas.png"))); // NOI18N
+        jButton8.setText(" Receitas");
+        jButton8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        painelMenuSand.add(jButton8);
+        jButton8.setBounds(10, 40, 110, 30);
+
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/calculadora.png"))); // NOI18N
+        jButton9.setText("Met. Basal");
+        jButton9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        painelMenuSand.add(jButton9);
+        jButton9.setBounds(10, 100, 110, 30);
+
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/mercado.png"))); // NOI18N
+        jButton10.setText(" Mercado");
+        jButton10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+        painelMenuSand.add(jButton10);
+        jButton10.setBounds(10, 70, 110, 30);
+
+        jButton11.setBackground(new java.awt.Color(255, 51, 51));
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/sair.png"))); // NOI18N
+        jButton11.setText("  Sair");
+        jButton11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+        painelMenuSand.add(jButton11);
+        jButton11.setBounds(10, 130, 110, 30);
+
+        jPanel1.add(painelMenuSand);
+        painelMenuSand.setBounds(10, 60, 130, 170);
+
+        jPanel2.setBackground(new java.awt.Color(255, 139, 30));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Cálculo de Kcal"));
         jPanel2.setLayout(null);
 
         jLabel2.setText("gramas");
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(70, 20, 43, 17);
+        jLabel2.setBounds(80, 20, 50, 14);
         jPanel2.add(gramatura);
-        gramatura.setBounds(10, 20, 50, 23);
+        gramatura.setBounds(10, 20, 60, 20);
 
         jLabel3.setText("=");
         jPanel2.add(jLabel3);
-        jLabel3.setBounds(140, 20, 34, 17);
+        jLabel3.setBounds(140, 20, 34, 14);
 
         jLabel4.setText("Kcal");
         jPanel2.add(jLabel4);
-        jLabel4.setBounds(240, 20, 34, 17);
+        jLabel4.setBounds(240, 20, 34, 14);
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        caloria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                caloriaActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField3);
-        jTextField3.setBounds(180, 20, 50, 23);
+        jPanel2.add(caloria);
+        caloria.setBounds(160, 20, 70, 20);
 
+        jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Calcular");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jButton4);
         jButton4.setBounds(103, 60, 90, 23);
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(110, 90, 290, 90);
 
-        jPanel4.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 139, 30)));
         jPanel4.setLayout(null);
 
         jLabel5.setText("Tabela Nutricional");
         jPanel4.add(jLabel5);
-        jLabel5.setBounds(10, 10, 110, 17);
+        jLabel5.setBounds(10, 10, 110, 14);
 
         jLabel6.setText("Quantidade");
         jPanel4.add(jLabel6);
-        jLabel6.setBounds(164, 10, 60, 17);
-
-        jLabel7.setText("%");
-        jPanel4.add(jLabel7);
-        jLabel7.setBounds(250, 10, 12, 17);
+        jLabel6.setBounds(190, 10, 70, 14);
 
         jLabel9.setText("---------------------------------------------------------------------");
         jPanel4.add(jLabel9);
-        jLabel9.setBounds(10, 30, 276, 17);
+        jLabel9.setBounds(10, 30, 276, 14);
 
         jLabel10.setText("Carboidratos");
         jPanel4.add(jLabel10);
-        jLabel10.setBounds(10, 50, 80, 17);
+        jLabel10.setBounds(10, 50, 80, 14);
 
         jLabel11.setText("Proteínas");
         jPanel4.add(jLabel11);
-        jLabel11.setBounds(10, 80, 80, 17);
+        jLabel11.setBounds(10, 80, 80, 14);
 
         jLabel12.setText("Gorduras Totais");
         jPanel4.add(jLabel12);
-        jLabel12.setBounds(10, 110, 100, 17);
-
-        jLabel13.setText("Açúcares");
-        jPanel4.add(jLabel13);
-        jLabel13.setBounds(10, 140, 80, 17);
+        jLabel12.setBounds(10, 110, 100, 14);
 
         jLabel14.setText("Sódio");
         jPanel4.add(jLabel14);
-        jLabel14.setBounds(10, 170, 60, 17);
+        jLabel14.setBounds(10, 140, 60, 14);
         jPanel4.add(carbo);
         carbo.setBounds(160, 50, 0, 0);
 
+        carboidrato.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel4.add(carboidrato);
+        carboidrato.setBounds(160, 50, 110, 20);
+
+        proteina.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel4.add(proteina);
+        proteina.setBounds(160, 80, 100, 20);
+
+        gordura.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel4.add(gordura);
+        gordura.setBounds(160, 110, 90, 20);
+
+        sodio.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel4.add(sodio);
+        sodio.setBounds(160, 140, 100, 20);
+
         jPanel1.add(jPanel4);
-        jPanel4.setBounds(110, 190, 290, 200);
+        jPanel4.setBounds(110, 200, 290, 180);
+
+        botaoSand.setBackground(new java.awt.Color(255, 139, 30));
+        botaoSand.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/menu.png"))); // NOI18N
+        botaoSand.setBorderPainted(false);
+        botaoSand.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoSandActionPerformed(evt);
+            }
+        });
+        jPanel1.add(botaoSand);
+        botaoSand.setBounds(10, 10, 50, 50);
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bg.jpg"))); // NOI18N
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(0, 0, 500, 400);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -175,13 +270,50 @@ public class ValorNutricional_GUI extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void caloriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caloriaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_caloriaActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Model.PesquisaAlimentar_DAO.Comidas();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        Model.PesquisaAlimentar_DAO.Comidas();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void botaoSandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSandActionPerformed
+        aparece2++;
+        if(aparece2%2 == 0){
+            painelMenuSand.setVisible(true);
+        }else{
+            painelMenuSand.setVisible(false);
+        }
+    }//GEN-LAST:event_botaoSandActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        new Home_GUI().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        new Receitas_GUI().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        new MetabolismoBasal_GUI().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        new Mercado_GUI().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jButton11ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -220,17 +352,23 @@ public class ValorNutricional_GUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JTextField PesquisarAlimento;
+    private javax.swing.JButton botaoSand;
+    public static javax.swing.JTextField caloria;
     public static javax.swing.JLabel carbo;
+    public static javax.swing.JLabel carboidrato;
+    public static javax.swing.JLabel gordura;
     public static javax.swing.JTextField gramatura;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -243,6 +381,8 @@ public class ValorNutricional_GUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JPanel painelMenuSand;
+    public static javax.swing.JLabel proteina;
+    public static javax.swing.JLabel sodio;
     // End of variables declaration//GEN-END:variables
 }

@@ -56,8 +56,14 @@ public static int aparece2 = 1;
         botaoSand = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         curso1 = new javax.swing.JButton();
         curso2 = new javax.swing.JButton();
         curso3 = new javax.swing.JButton();
@@ -65,11 +71,11 @@ public static int aparece2 = 1;
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(255, 146, 87));
+        jPanel1.setBackground(new java.awt.Color(103, 179, 179));
         jPanel1.setLayout(null);
 
         painelMenuSand.setBackground(new java.awt.Color(255, 255, 255));
-        painelMenuSand.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(250, 133, 34), 2));
+        painelMenuSand.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(103, 179, 179), 2));
         painelMenuSand.setLayout(null);
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/home.png"))); // NOI18N
@@ -105,8 +111,8 @@ public static int aparece2 = 1;
         painelMenuSand.add(jButton7);
         jButton7.setBounds(10, 100, 110, 30);
 
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/mercado.png"))); // NOI18N
-        jButton8.setText(" Mercado");
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/calculadora.png"))); // NOI18N
+        jButton8.setText("Met. Basal");
         jButton8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,7 +137,7 @@ public static int aparece2 = 1;
         jPanel1.add(painelMenuSand);
         painelMenuSand.setBounds(10, 40, 130, 170);
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "E-Books", 0, 0, new java.awt.Font("Arial", 1, 12))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "E-Books", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
         jPanel2.setLayout(null);
 
         jPanel5.setBackground(new java.awt.Color(255, 102, 102));
@@ -152,17 +158,17 @@ public static int aparece2 = 1;
         jLabel1.setBounds(10, 0, 63, 90);
 
         jPanel2.add(jPanel6);
-        jPanel6.setBounds(150, 20, 80, 90);
+        jPanel6.setBounds(210, 20, 80, 90);
 
         jPanel7.setBackground(new java.awt.Color(102, 153, 255));
         jPanel7.setLayout(null);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ebook3.png"))); // NOI18N
         jPanel7.add(jLabel2);
-        jLabel2.setBounds(10, 0, 61, 90);
+        jLabel2.setBounds(20, 0, 70, 90);
 
         jPanel2.add(jPanel7);
-        jPanel7.setBounds(240, 20, 80, 90);
+        jPanel7.setBounds(360, 20, 90, 90);
 
         book1.setText("Comprar");
         book1.addActionListener(new java.awt.event.ActionListener() {
@@ -180,7 +186,7 @@ public static int aparece2 = 1;
             }
         });
         jPanel2.add(book2);
-        book2.setBounds(153, 120, 80, 23);
+        book2.setBounds(210, 120, 80, 23);
 
         book3.setText("Comprar");
         book3.addActionListener(new java.awt.event.ActionListener() {
@@ -189,7 +195,7 @@ public static int aparece2 = 1;
             }
         });
         jPanel2.add(book3);
-        book3.setBounds(243, 120, 80, 23);
+        book3.setBounds(360, 120, 90, 23);
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(0, 50, 500, 150);
@@ -198,13 +204,14 @@ public static int aparece2 = 1;
         jPanel1.add(jButton4);
         jButton4.setBounds(220, 370, 61, 23);
 
-        jPanel4.setBackground(new java.awt.Color(255, 153, 102));
+        jPanel4.setBackground(new java.awt.Color(103, 179, 179));
         jPanel4.setLayout(null);
         jPanel4.add(jTextField1);
         jTextField1.setBounds(80, 10, 320, 30);
 
-        jButton3.setBackground(new java.awt.Color(246, 188, 133));
+        jButton3.setBackground(new java.awt.Color(103, 179, 179));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/iconePerfil (1).png"))); // NOI18N
+        jButton3.setBorderPainted(false);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -213,12 +220,14 @@ public static int aparece2 = 1;
         jPanel4.add(jButton3);
         jButton3.setBounds(450, 0, 50, 50);
 
+        jButton2.setBackground(new java.awt.Color(103, 179, 179));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/lupa.png"))); // NOI18N
         jPanel4.add(jButton2);
-        jButton2.setBounds(400, 10, 40, 40);
+        jButton2.setBounds(400, 10, 40, 30);
 
-        botaoSand.setBackground(new java.awt.Color(250, 133, 34));
+        botaoSand.setBackground(new java.awt.Color(103, 179, 179));
         botaoSand.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/menu.png"))); // NOI18N
+        botaoSand.setBorderPainted(false);
         botaoSand.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoSandActionPerformed(evt);
@@ -230,23 +239,50 @@ public static int aparece2 = 1;
         jPanel1.add(jPanel4);
         jPanel4.setBounds(0, 0, 500, 50);
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cursos", 0, 0, new java.awt.Font("Arial", 1, 12))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cursos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
         jPanel3.setLayout(null);
 
         jPanel8.setBackground(new java.awt.Color(153, 255, 153));
         jPanel8.setLayout(null);
+
+        jLabel3.setText("Aqui");
+        jPanel8.add(jLabel3);
+        jLabel3.setBounds(20, 44, 70, 20);
+
+        jLabel4.setText("+ Cursos");
+        jPanel8.add(jLabel4);
+        jLabel4.setBounds(10, 20, 70, 20);
+
         jPanel3.add(jPanel8);
         jPanel8.setBounds(60, 20, 80, 100);
 
         jPanel9.setBackground(new java.awt.Color(204, 153, 255));
         jPanel9.setLayout(null);
+
+        jLabel7.setText("Aqui");
+        jPanel9.add(jLabel7);
+        jLabel7.setBounds(30, 40, 70, 20);
+
+        jLabel6.setText("+ Cursos");
+        jPanel9.add(jLabel6);
+        jLabel6.setBounds(20, 10, 70, 20);
+
         jPanel3.add(jPanel9);
-        jPanel9.setBounds(160, 20, 80, 100);
+        jPanel9.setBounds(210, 20, 90, 100);
 
         jPanel10.setBackground(new java.awt.Color(255, 153, 102));
         jPanel10.setLayout(null);
+
+        jLabel8.setText("+ Cursos");
+        jPanel10.add(jLabel8);
+        jLabel8.setBounds(20, 10, 70, 20);
+
+        jLabel9.setText("Aqui");
+        jPanel10.add(jLabel9);
+        jLabel9.setBounds(30, 40, 70, 20);
+
         jPanel3.add(jPanel10);
-        jPanel10.setBounds(260, 20, 80, 100);
+        jPanel10.setBounds(370, 20, 80, 100);
 
         curso1.setText("Comprar");
         curso1.addActionListener(new java.awt.event.ActionListener() {
@@ -264,7 +300,7 @@ public static int aparece2 = 1;
             }
         });
         jPanel3.add(curso2);
-        curso2.setBounds(160, 130, 80, 23);
+        curso2.setBounds(200, 130, 100, 23);
 
         curso3.setText("Comprar");
         curso3.addActionListener(new java.awt.event.ActionListener() {
@@ -273,7 +309,7 @@ public static int aparece2 = 1;
             }
         });
         jPanel3.add(curso3);
-        curso3.setBounds(260, 130, 80, 23);
+        curso3.setBounds(360, 130, 90, 23);
 
         jPanel1.add(jPanel3);
         jPanel3.setBounds(0, 200, 500, 160);
@@ -348,7 +384,8 @@ public static int aparece2 = 1;
     }//GEN-LAST:event_curso2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        new Perfil_GUI().setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void botaoSandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSandActionPerformed
@@ -376,7 +413,7 @@ public static int aparece2 = 1;
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        new Mercado_GUI().setVisible(true);
+        new MetabolismoBasal_GUI().setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton8ActionPerformed
 
@@ -437,7 +474,13 @@ public static int aparece2 = 1;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;

@@ -5,6 +5,13 @@
  */
 package View;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Alunos
@@ -59,23 +66,31 @@ public class Home_GUI extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Tutorias de Receita do Dia"));
         jPanel2.setLayout(null);
 
+        jPanel3.setBackground(new java.awt.Color(250, 250, 250));
         jPanel3.setLayout(null);
 
-        jLabel2.setText("Receita 1");
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel2.setText("Lasanha Vegana");
         jPanel3.add(jLabel2);
-        jLabel2.setBounds(10, 11, 45, 14);
+        jLabel2.setBounds(10, 11, 160, 14);
 
-        jLabel3.setText("Descrição");
+        jLabel3.setText("Uma lasanha saudável com gosto normal!");
         jPanel3.add(jLabel3);
-        jLabel3.setBounds(10, 36, 46, 14);
+        jLabel3.setBounds(10, 36, 250, 14);
 
         jPanel2.add(jPanel3);
         jPanel3.setBounds(20, 30, 290, 60);
 
-        jButton2.setText("Download PDF");
+        jButton2.setBackground(new java.awt.Color(250, 250, 250));
+        jButton2.setText("Detalhes");
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jButton2);
-        jButton2.setBounds(320, 40, 110, 50);
+        jButton2.setBounds(330, 30, 100, 60);
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(20, 280, 450, 110);
@@ -203,6 +218,17 @@ public class Home_GUI extends javax.swing.JFrame {
         new ValorNutricional_GUI().setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Desktop d = Desktop.getDesktop();
+        try {
+            d.browse(new URI("https://violifefoods.com/br/recipe/lasanha-vegana/"));
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(Home_GUI.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Home_GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

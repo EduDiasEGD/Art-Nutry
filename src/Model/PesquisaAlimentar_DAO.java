@@ -23,33 +23,33 @@ public class PesquisaAlimentar_DAO {
        else{
      switch (comida) {
      case "Arroz":
-       System.out.print(Calorias[0]*(gramatur/100));
-       System.out.print(Carboidrato[0]*(gramatur/100));
-       System.out.print(Proteina[0]*(gramatur/100));
-       System.out.print(Gorduras[0]*(gramatur/100));
-       System.out.print(Sodio[0]*(gramatur/100));
+       View.ValorNutricional_GUI.caloria.setText(String.valueOf(Calorias[0]*(gramatur/100))); 
+       View.ValorNutricional_GUI.carboidrato.setText(String.valueOf(Carboidrato[0]*(gramatur/100)));
+       View.ValorNutricional_GUI.proteina.setText(String.valueOf(Proteina[0]*(gramatur/100)));
+       View.ValorNutricional_GUI.gordura.setText(String.valueOf(Gorduras[0]*(gramatur/100)));
+       View.ValorNutricional_GUI.sodio.setText(String.valueOf(Sodio[0]*(gramatur/100)));
          
        break;
      case "Feijao":
-       System.out.print(Calorias[1]*(gramatur/100));
-       System.out.print(Carboidrato[1]*(gramatur/100));
-       System.out.print(Proteina[1]*(gramatur/100));
-       System.out.print(Gorduras[1]*(gramatur/100));
-       System.out.print(Sodio[1]*(gramatur/100));
+       View.ValorNutricional_GUI.caloria.setText(String.valueOf(Calorias[1]*(gramatur/100))); 
+       View.ValorNutricional_GUI.carboidrato.setText(String.valueOf(Carboidrato[1]*(gramatur/100)));
+       View.ValorNutricional_GUI.proteina.setText(String.valueOf(Proteina[1]*(gramatur/100)));
+       View.ValorNutricional_GUI.gordura.setText(String.valueOf(Gorduras[1]*(gramatur/100)));
+       View.ValorNutricional_GUI.sodio.setText(String.valueOf(Sodio[1]*(gramatur/100)));
        break;
      case "Batata":
-       System.out.print(Calorias[2]*(gramatur/100));
-       System.out.print(Carboidrato[2]*(gramatur/100));
-       System.out.print(Proteina[2]*(gramatur/100));
-       System.out.print(Gorduras[2]*(gramatur/100));
-       System.out.print(Sodio[2]*(gramatur/100));
+       View.ValorNutricional_GUI.caloria.setText(String.valueOf(Calorias[2]*(gramatur/100))); 
+       View.ValorNutricional_GUI.carboidrato.setText(String.valueOf(Carboidrato[2]*(gramatur/100)));
+       View.ValorNutricional_GUI.proteina.setText(String.valueOf(Proteina[2]*(gramatur/100)));
+       View.ValorNutricional_GUI.gordura.setText(String.valueOf(Gorduras[2]*(gramatur/100)));
+       View.ValorNutricional_GUI.sodio.setText(String.valueOf(Sodio[2]*(gramatur/100)));
        break;
      case "Chocolate":
-        System.out.print(Calorias[3]*(gramatur/100));
-       System.out.print(Carboidrato[3]*(gramatur/100));
-       System.out.print(Proteina[3]*(gramatur/100));
-       System.out.print(Gorduras[3]*(gramatur/100));
-       System.out.print(Sodio[3]*(gramatur/100));
+       View.ValorNutricional_GUI.caloria.setText(String.valueOf(Calorias[3]*(gramatur/100))); 
+       View.ValorNutricional_GUI.carboidrato.setText(String.valueOf(Carboidrato[3]*(gramatur/100)));
+       View.ValorNutricional_GUI.proteina.setText(String.valueOf(Proteina[3]*(gramatur/100)));
+       View.ValorNutricional_GUI.gordura.setText(String.valueOf(Gorduras[3]*(gramatur/100)));
+       View.ValorNutricional_GUI.sodio.setText(String.valueOf(Sodio[3]*(gramatur/100)));
        break;
      
      default:
